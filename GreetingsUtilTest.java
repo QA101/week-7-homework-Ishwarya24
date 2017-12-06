@@ -22,7 +22,8 @@ class GreetingsUtilTest {
 	}
 
 	@Test
-	void test() {
+	void test() 
+	{
 		expected = "You already said that";
         actual = gu.Hello();
 		assertTrue("Expected: " + expected + " Actual: "+actual, actual.equals(expected));
@@ -32,6 +33,14 @@ class GreetingsUtilTest {
         actual = gu.GoodBye();
 		assertTrue("Expected: " + expected + " Actual: "+actual, actual.equals(expected));
 		
+		expected = "Hi!";
+        actual = gu.Hello();
+		assertTrue("Expected: " + expected + " Actual: "+actual, actual.equals(expected));
+		
+		gu.ChangeState();
+		expected = "You already said that";
+        actual = gu.GoodBye();
+		assertTrue("Expected: " + expected + " Actual: "+actual, actual.equals(expected));
 	}
 
 }
